@@ -1,35 +1,33 @@
+import React, { useEffect } from "react";
 
-import React, { useEffect,   } from 'react'
-import './App.css';
-import './components/Form/Form.css';
+import "./components/Form/Form.css";
 // import axios from 'axios';
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 
-
-
-
-import Form from './components/Form/Form';
+import Form from "./components/Form/Form";
 // import Posts from './components/Posts/Posts';
-import { getPosts } from './actions/posts';
-import { createPost } from './actions/posts';
+// import { getPosts } from './actions/posts';
+// import { createPost } from './actions/posts';
 
-function App({task, setTask}) {
-
+function App({ task, setTask }) {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getPosts());
-    dispatch(createPost());  
-  }, [dispatch]);
+     const userPayload = {
+       email: "smithwills1989@gmail.com",
+       password: "12345678",
+     };
+    // dispatch();
+
+  }, []);
+ 
+
+
 
   // let us try dispatching a create post too 🚀
   return (
     <div>
-      
-     
-<div>
+      <div></div>
 
-</div>
-      
       <div>
         <Form task={task} setTask={setTask} />
       </div>

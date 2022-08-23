@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import { createPost } from '../../api';
 import axios from 'axios';
 
 export default function Form() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [task, setTask] = useState({
     Task: '',
     Follow_up: '',
@@ -24,7 +24,7 @@ export default function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createPost(task));
+    // dispatch(createPost(task));
     console.log(task);
   };
 
