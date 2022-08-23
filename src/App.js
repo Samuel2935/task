@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React, { useEffect,   } from 'react'
+import './App.css';
+import './components/Form/Form.css';
+// import axios from 'axios';
+import { useDispatch } from 'react-redux';
+
+
+
+
+import Form from './components/Form/Form';
+// import Posts from './components/Posts/Posts';
+import { getPosts } from './actions/posts';
+import { createPost } from './actions/posts';
+
+function App({task, setTask}) {
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getPosts());
+    dispatch(createPost());  
+  }, [dispatch]);
+
+  // let us try dispatching a create post too 🚀
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      
+     
+<div>
+
+</div>
+      
+      <div>
+        <Form task={task} setTask={setTask} />
+      </div>
     </div>
   );
 }

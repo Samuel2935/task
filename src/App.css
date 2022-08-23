@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+body{
+  background-color: #fff;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +39,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+ img{
+  position: absolute;
+  background-color: aquamarine;
+  top: 0;
+
+  height: 100px;
+  width: stretch;
+  justify-items: center;
 }

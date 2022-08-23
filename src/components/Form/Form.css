@@ -1,0 +1,84 @@
+
+.create{
+    /* background-color: #cccc; */
+    background-image: linear-gradient(to bottom, #ccc, #1da5);
+    position: absolute;
+    right: 3rem;
+    width: 50%;
+    height: auto;
+    padding: 1.5rem;
+    top: 10rem;
+    align-items: center;
+    border-radius: .5rem 2.5rem .5rem 2.5rem;
+}
+
+input{
+    width: 100%;
+    margin: 3px;
+    padding: 4px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #ccc;
+}
+
+button{
+    width: 100%;
+    margin: 5px;
+    padding: 4px;
+    border-radius: 5px; 
+    cursor: pointer;
+    color: aliceblue;
+    box-shadow: 5px 5px 10px whitesmoke;
+}
+
+
+.date{
+    width: 45% !important;
+    /* padding: 1rem; */
+}
+
+.time{
+    width: 45% !important;
+}
+
+.date_time{
+    display: flex ;
+    width: 100% !important;
+    justify-content: space-between;
+    justify-items: space-between;
+    
+}
+
+.btn{
+    display: flex ;
+    width: 100% !important;
+    /* margin: 2rem; */
+    justify-content: space-between;
+    justify-items: space-between;
+}
+
+.btn1{
+    width: 45% !important;
+    border: none;
+
+}
+
+.btn2{
+    width: 45% !important;
+}
+
+.double{
+    display: flex;
+    justify-content: space-between;
+    justify-items: space-between;
+}
+
+.addput{
+    width: 100% !important;
+    display: flex;
+}
+
+.add{
+    width: auto !important;
+    border: none;
+    border-radius: 5px !important;
+}
