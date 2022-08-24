@@ -20,7 +20,7 @@ export const authSlice = createSlice({
     [getUser.fulfilled]: (state, payload) => {
       state.isLoading = false;
       state.user = payload;
-      console.log("extraReducer: ", payload);
+      // console.log("extraReducer: ", payload);
       state.successfull = true
     },
     [getUser.rejected]: (state, payload) => {

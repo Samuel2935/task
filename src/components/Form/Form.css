@@ -1,18 +1,30 @@
 
+
+.formWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+    height: 100vh;
+}
 .create{
-    /* background-color: #cccc; */
     background-image: linear-gradient(to bottom, #ccc, #1da5);
-    position: absolute;
-    right: 3rem;
-    width: 50%;
-    height: auto;
+    width: 500px;
+    /* height: auto; */
     padding: 1.5rem;
-    top: 10rem;
+    /* top: 10rem; */
     align-items: center;
     border-radius: .5rem 2.5rem .5rem 2.5rem;
 }
 
 input{
+    width: 100%;
+    margin: 3px;
+    padding: 4px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #ccc;
+}
+select {
     width: 100%;
     margin: 3px;
     padding: 4px;
