@@ -6,26 +6,24 @@ import axios from 'axios';
 export default function Form() {
   const dispatch = useDispatch();
   const [task, setTask] = useState({
-    Task: '',
     Follow_up: '',
     date: '',
     time: '',
-    Samuel_Ezeh: '',
-  });
+    Samuel: ''  });
 
   useEffect(() => {
     axios.get(task).then((response) => {
       setTask(response.data).catch((err) => {
         console.log(JSON.parse(err));
+        console.log(response.data);
       });
-      console.log(response.data);
     });
   }, [task]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createPost(task));
-    console.log(task);
+    console.log('hello world');
   };
 
   const clear = (e) => {
@@ -35,16 +33,21 @@ export default function Form() {
   return (
     <div className="create">
       <div className="reg">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="double">
             <div className="addput">
-              <input
-                placeholder="Task"
-                onChange={(e) => setTask({ ...task, Task: e.target.value })}
-              />
-
-              <div className="add">
-                <button style={{ backgroundColor: '#fff', color: '#1da' }}>
+              <div className="taskme">
+                Task {0}
+                <button
+                  style={{
+                    backgroundColor: '#fff',
+                    color: '#03A9F4',
+                    width: '20%',
+                    float: 'right',
+                    margin: '0',
+                    border:"1px solid #03A9F4"
+                  }}
+                >
                   +
                 </button>
               </div>
@@ -53,11 +56,14 @@ export default function Form() {
 
           <div>
             <p>Task Description</p>
-            <input
+          <input
+              type="url text"
+              
               placeholder="Follow_up"
               onChange={(e) => setTask({ ...task, Follow_up: e.target.value })}
+             
             />
-            <i></i>
+           
           </div>
 
           <div className="date_time">
@@ -74,7 +80,7 @@ export default function Form() {
               <p>Time</p>
               <input
                 type="time"
-                placeholder='time'
+                placeholder="time"
                 onChange={(e) => setTask({ ...task, time: e.target.value })}
               />
             </div>
@@ -82,28 +88,36 @@ export default function Form() {
 
           <div>
             <p>Assign User</p>
-            <input
-              type=""
-              placeholder="Samuel_Ezeh"
-              onChange={(e) => setTask({ ...task, Samuel_Ezeh: e.target.value })}
-            />
+            <select>
+              <option>Samuel </option>
+            </select>
+         
           </div>
 
           <div className="btn">
+
+{/*             
+          <div className="btn3">
+                  &#128465;
+         </div> */}
+     
+            <div className="btn2">
+              <button onClick={clear}
+              style={{background:"#ccc", border:"1px solid #03A9F4", borderRadius:"10PX"}}
+               >
+                cancel
+              </button>
+            </div>
             <div className="btn1">
               <button
                 onSubmit={handleSubmit}
                 type="submit"
-                style={{ backgroundColor: 'green' }}
+                style={{background:"#03A9F4", border:"none", borderRadius:"10PX"}}
               >
                 save
               </button>
             </div>
-            <div className="btn2">
-              <button onClick={clear} style={{ backgroundColor: 'red' }}>
-                cancel
-              </button>
-            </div>
+
           </div>
         </form>
       </div>

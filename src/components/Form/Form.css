@@ -1,15 +1,17 @@
 
 .create{
-    /* background-color: #cccc; */
-    background-image: linear-gradient(to bottom, #ccc, #1da5);
+  
+    background: #ecf0f3;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
     position: absolute;
     right: 3rem;
     width: 50%;
     height: auto;
     padding: 1.5rem;
+    margin-right: 10%;
     top: 10rem;
     align-items: center;
-    border-radius: .5rem 2.5rem .5rem 2.5rem;
+    border-radius: .5rem;
 }
 
 input{
@@ -17,11 +19,17 @@ input{
     margin: 3px;
     padding: 4px;
     border-radius: 5px;
-    box-shadow: 5px 5px 10px #ccc;
+    border: none;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+}
+
+input:hover{
+    border: 1px solid #03A9F4;
 }
 
 button{
     width: 100%;
+    height: auto;
     margin: 5px;
     padding: 4px;
     border-radius: 5px; 
@@ -31,9 +39,23 @@ button{
 }
 
 
+select{
+    width: 100%;
+    height: auto;
+    margin: 5px;
+    padding: 4px;
+    border-radius: 5px; 
+    cursor: pointer;
+    border: none;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+}
+
+select:hover{
+    border: 1px solid #03A9F4;
+}
+
 .date{
     width: 45% !important;
-    /* padding: 1rem; */
 }
 
 .time{
@@ -56,14 +78,23 @@ button{
     justify-items: space-between;
 }
 
+
 .btn1{
     width: 45% !important;
-    border: none;
+    margin-top: 1rem;
 
 }
 
 .btn2{
     width: 45% !important;
+    margin-top: 1rem;
+
+}
+
+.btn3{
+    margin-top: 1.5rem;
+    font-size: large;
+    cursor: pointer;
 }
 
 .double{
@@ -81,4 +112,21 @@ button{
     width: auto !important;
     border: none;
     border-radius: 5px !important;
+}
+.taskme{
+    width: 100%;
+    background-color: white;
+    height: auto;
+    padding: 2px;
+    border-radius: 5px !important;
+}
+
+@media(max-width: 380px){
+    .create{
+        margin: 30px 20px;
+        padding: 40px 15px 15px 15px;
+    }
+}
+p{
+    font-family:'Courier New', Courier, monospace;
 }

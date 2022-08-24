@@ -6,7 +6,7 @@ import reducers from "./reducers";
 
 
 const reducer = combineReducers({
-    Posts: reducers,
+    task: reducers,
    });
 
 

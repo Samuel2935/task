@@ -10,8 +10,8 @@ import { useDispatch } from 'react-redux';
 
 import Form from './components/Form/Form';
 // import Posts from './components/Posts/Posts';
-import { getPosts } from './actions/posts';
-import { createPost } from './actions/posts';
+import { getPosts } from './actions/task';
+import { createPost } from './actions/task';
 
 function App({task, setTask}) {
 
@@ -21,7 +21,6 @@ function App({task, setTask}) {
     dispatch(createPost());  
   }, [dispatch]);
 
-  // let us try dispatching a create post too 🚀
   return (
     <div>
       

@@ -14,9 +14,9 @@ import * as api from '../api';
 
  }
 
- export const createPost = (post)=> async (dispatch)=>{
+ export const createPost = (task)=> async (dispatch)=>{
      try {
-         const {data} = await api.createPost(post);
+         const {data} = await api.createPost(task);
          dispatch({type: 'CREATE', payload: data})
        
      } catch (error) {
