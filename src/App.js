@@ -2,6 +2,8 @@
 import React, { useEffect,   } from 'react'
 import './App.css';
 import './components/Form/Form.css';
+import Page from './Page';
+import './page.css';
 // import axios from 'axios';
 import { useDispatch } from 'react-redux';
 
@@ -30,7 +32,10 @@ function App({task, setTask}) {
 </div>
       
       <div>
-        <Form task={task} setTask={setTask} />
+        
+      <Page/>
+      <Form task={task} setTask={setTask} />
+     
       </div>
     </div>
   );
