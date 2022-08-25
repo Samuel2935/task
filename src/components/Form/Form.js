@@ -5,7 +5,8 @@ import axios from 'axios';
 
 export default function Form() {
   const dispatch = useDispatch();
-  const {payload} = useSelector((state) => state.assignedUser.assignedUers);
+  const { assignedUers } = useSelector((state) => state.assignedUser);
+
   const [task, setTask] = useState({
     Task: '',
     Follow_up: '',
@@ -96,8 +97,8 @@ export default function Form() {
                 }
               >
                 <option value="">Select a user</option>
-                {payload &&
-                  payload?.map((user) => (
+                {assignedUers &&
+                  assignedUers.payload?.map((user) => (
                     <option key={user.id}>{user.name}</option>
                   ))}
               </select>
