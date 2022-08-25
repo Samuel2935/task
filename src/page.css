@@ -1,0 +1,84 @@
+
+.pageWrapp{
+   
+
+    margin: 5rem;
+    align-items: center;
+    margin-top: 10rem;
+    background: #ecf0f3;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+    position: absolute;
+    right: 3rem;
+    width: 50%;
+    height: auto;
+    padding: 1.5rem;
+    margin-right: 10%;
+    align-items: center;
+    border-radius: .5rem;
+}
+
+.count{
+    width: 100%;
+    background-color: white;
+    height: auto;
+    padding: 3px;
+    border-radius: 5px !important;
+}
+
+.info{
+    display: inline;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    justify-items: space-between;
+}
+
+.ifn{
+    display: flex;
+}
+
+
+.para{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    padding: .7rem;
+    position: relative;
+    border: none;
+    border-radius: 8px;
+    color: #000;
+}
+
+.btns{
+    display: flex;
+}
+
+.user{
+    background: yellowgreen;
+    color: white;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+    padding: .2rem;
+    height: auto;
+    border-radius: 8px;
+    width: auto
+}
+
+.contact{
+    display: flex;
+    background: #fff;
+    border-radius: 5px;
+    padding: 3px;
+    justify-content: space-between;
+    justify-items: space-between;
+
+}
+
+.contact div{
+    padding-top: .7rem;
+    color: #999;
+}
+.contact div:hover{
+    cursor: pointer;
+    color: #222;
+}

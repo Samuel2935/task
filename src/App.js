@@ -25,13 +25,13 @@ function App() {
 
   }, [user]);
 
-
   return (
     <div>
       <div>
         <Form />
       </div>
     </div>
+    
   );
 }
 

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 
 export default function Form() {
@@ -8,12 +10,10 @@ export default function Form() {
   const { assignedUers } = useSelector((state) => state.assignedUser);
 
   const [task, setTask] = useState({
-    Task: '',
     Follow_up: '',
     date: '',
     time: '',
-    Samuel_Ezeh: '',
-  });
+    Samuel: ''  });
 
   useEffect(() => {
     
@@ -28,6 +28,7 @@ export default function Form() {
   const clear = (e) => {
     e.preventDefault();
   };
+
 
   return (
     <div className="formWrap">
