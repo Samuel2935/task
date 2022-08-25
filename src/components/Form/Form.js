@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createPost } from '../../api';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 export default function Form() {
   const dispatch = useDispatch();
+
   const [task, setTask] = useState({
     Follow_up: '',
     date: '',
@@ -30,26 +33,34 @@ export default function Form() {
     e.preventDefault();
   };
 
+
   return (
     <div className="create">
+  
       <div className="reg">
         <form onSubmit={handleSubmit}>
           <div className="double">
             <div className="addput">
               <div className="taskme">
                 Task {0}
+                <Link  to="/">
+
                 <button
-                  style={{
-                    backgroundColor: '#fff',
-                    color: '#03A9F4',
-                    width: '20%',
-                    float: 'right',
-                    margin: '0',
-                    border:"1px solid #03A9F4"
-                  }}
-                >
-                  +
-                </button>
+          
+          style={{
+            backgroundColor: '#fff',
+            color: '#03A9F4',
+            width: '20%',
+            float: 'right',
+            margin: '0',
+            border:"1px solid #03A9F4"
+          }}
+        >
+          
+          +
+        </button>
+                </Link>
+              
               </div>
             </div>
           </div>
@@ -96,11 +107,6 @@ export default function Form() {
 
           <div className="btn">
 
-{/*             
-          <div className="btn3">
-                  &#128465;
-         </div> */}
-     
             <div className="btn2">
               <button onClick={clear}
               style={{background:"#ccc", border:"1px solid #03A9F4", borderRadius:"10PX"}}

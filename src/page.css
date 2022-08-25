@@ -4,7 +4,7 @@
 
     margin: 5rem;
     align-items: center;
-    margin-top: 40rem;
+    margin-top: 10rem;
     background: #ecf0f3;
     box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
     position: absolute;
@@ -58,7 +58,7 @@
     color: white;
     margin-top: .5rem;
     margin-bottom: 1rem;
-    padding: .5rem;
+    padding: .2rem;
     height: auto;
     border-radius: 8px;
     width: auto

@@ -4,13 +4,18 @@ import BorderColorIcon from '@mui/icons-material/BorderColor';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EmailIcon from '@mui/icons-material/Email';
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
+import { Link } from 'react-router-dom';
+
 
 function Page() {
+
   return (
     <div className="pageWrapp">
       <div className="pager">
-        <div className="count">Task
-        <button
+        <div className="count">Task {0}
+
+        <Link  to="/Form">
+        <button 
                   style={{
                     backgroundColor: '#fff',
                     color: 'yellowgreen',
@@ -20,8 +25,12 @@ function Page() {
                     border:"1px solid yellowgreen"
                   }}
                 >
+                  
                   +
                 </button>
+
+        </Link>
+    
         </div>
 
         <div className="info">
@@ -33,7 +42,7 @@ function Page() {
           <div className="ifn">
             <div className="para">
               {/* user info goes here */}
-              get me water!!😊 thanks Abiodun 🙏
+              get me water!!😊 
             </div>
             <div className="btns">
               <button

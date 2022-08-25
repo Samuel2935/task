@@ -6,6 +6,13 @@ import Page from './Page';
 import './page.css';
 // import axios from 'axios';
 import { useDispatch } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  // Link,
+
+} from 'react-router-dom';
 
 
 
@@ -24,6 +31,11 @@ function App({task, setTask}) {
   }, [dispatch]);
 
   return (
+
+
+    // <Link  to="/">
+
+    <Router>
     <div>
       
      
@@ -33,11 +45,18 @@ function App({task, setTask}) {
       
       <div>
         
-      <Page/>
-      <Form task={task} setTask={setTask} />
+<Routes>
+      {/* <Form task={task} setTask={setTask}/> */}
+      <Route path="/" element={<Page/>} />
+      <Route path="/Form" element={<Form/>} />
+      
+      {/* <Page/> */}
+ </Routes>     
+
      
       </div>
     </div>
+    </Router>
   );
 }
 
