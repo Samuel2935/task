@@ -1,0 +1,58 @@
+.mainWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    height: 100vh;
+}
+
+.taskWrap {
+width: 550px;
+height: 500px;
+}
+.taskCount {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem;
+    background-color: rgba(211,211,211,0.3);
+
+}
+.taskCount button {
+ width: 70px;
+ height: 70px;
+ border: 1px solid #d3d3d3;
+ border-radius: 0;
+ margin: 0;
+ background-color: transparent;
+ color: #142000;
+}
+.taskSummary {
+    border: 1px solid #d3d3d3;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-color: #fff;
+}
+.taskSummary .left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 70%;
+}
+
+.taskSummary .left .date {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 13px;
+}
+.taskSummary .right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import "./components/Form/Form.css";
 import { useDispatch, useSelector } from "react-redux";
-import Form from "./components/Form/Form";
 import { getUser } from "./store/actions/authAction";
 import { getAssignedUser } from "./store/actions/assignedUserAction";
+import Task from "./components/Task";
 
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
   return (
     <div>
       <div>
-        <Form />
+        <Task />
       </div>
     </div>
     

@@ -1,14 +1,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-
-export const getAssignedUser = createAsyncThunk(
-  "auth/getAssigedUserDetails",
-  
+export const deleteTask = createAsyncThunk(
+  "task/deleteTask",
   async (data, { rejectWithValue }) => {
     try {
-      const res = await axios.get(
-        `team?product=outreach&company_id=${data.company_id}`,
+      const res = await axios.delete(
+        `task/lead_465c14d0e99e4972b6b21ffecf3dd691/${data.task_id}?company_id=${data.company_id}`,
+        JSON.stringify({}),
         {
           headers: {
             Accept: "application/json",
@@ -17,7 +16,8 @@ export const getAssignedUser = createAsyncThunk(
           },
         }
       );
-      return res.data.results.data;
+      console.log(res);
+      return res;
     } catch (error) {
       rejectWithValue(error.response.data);
     }

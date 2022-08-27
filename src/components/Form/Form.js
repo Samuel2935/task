@@ -1,61 +1,63 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { AddTask } from '../../store/actions/addTaskAction';
 
 
 
-export default function Form() {
+export default function Form({ setAddTask, setTaskSummary, setJustAdded }) {
   const dispatch = useDispatch();
   const { assignedUers } = useSelector((state) => state.assignedUser);
+  const { user } = useSelector((state) => state.auth);
 
-  const [task, setTask] = useState({
-    Follow_up: '',
-    date: '',
-    time: '',
-    Samuel: ''  });
+  const [payload, setPayload] = useState({
+    task_date: "",
+    task_time: 5400,
+    assigned_user: "",
+    is_completed: 1,
+    time_zone: 19800,
+    task_msg: "",
+  });
 
-  useEffect(() => {
-    
-  }, []);
+  const getUserId = (user_name) => {
+    const selectedUser =
+      assignedUers.payload?.length &&
+      assignedUers.payload?.filter(
+        (assignedUser) => assignedUser.name === user_name
+      );
+
+    const userId = selectedUser[0].id;
+    return setPayload({ ...payload, assigned_user: userId });
+  };
+  
+  // const hh_mm_ss_To_Sec = (hms) => {
+  //   // console.log(typeof hms);
+  //   const [hours, minutes, seconds] = parseInt(hms.split(":"));
+  //   const totalSeconds = +hours * 60 * 60 + +minutes * 60 + +seconds;
+  //   console.log([typeof hours, typeof minutes, seconds]);
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // dispatch(createPost(task));
-    console.log(task);
+    const result = user.payload.results;
+    const data = { payload, result };
+    console.log(payload);
+    dispatch(AddTask(data));
+    setAddTask(false);
+    setJustAdded(true);
   };
-
-  const clear = (e) => {
-    e.preventDefault();
-  };
-
 
   return (
     <div className="formWrap">
       <div className="create">
         <div className="reg">
           <form>
-            <div className="double">
-              <div className="addput">
-                <input
-                  placeholder="Task"
-                  onChange={(e) => setTask({ ...task, Task: e.target.value })}
-                />
-
-                <div className="add">
-                  <button style={{ backgroundColor: "#fff", color: "#1da" }}>
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-
             <div>
               <p>Task Description</p>
               <input
                 placeholder="Follow_up"
+                value={payload.task_msg}
                 onChange={(e) =>
-                  setTask({ ...task, Follow_up: e.target.value })
+                  setPayload({ ...payload, task_msg: e.target.value })
                 }
               />
               <i></i>
@@ -67,7 +69,10 @@ export default function Form() {
                 <input
                   type="date"
                   placeholder="date"
-                  onChange={(e) => setTask({ ...task, date: e.target.value })}
+                  value={payload.task_date}
+                  onChange={(e) =>
+                    setPayload({ ...payload, task_date: e.target.value })
+                  }
                 />
               </div>
 
@@ -76,26 +81,26 @@ export default function Form() {
                 <input
                   type="time"
                   placeholder="time"
-                  onChange={(e) => setTask({ ...task, time: e.target.value })}
+                  // value={payload.task_time}
+                  // onChange={
+                  //   (e) => hh_mm_ss_To_Sec(e.target.value)
+                  //   // setPayload({ ...payload, task_time: e.target.value })
+                  // }
                 />
               </div>
             </div>
 
             <div>
               <p>Assign User</p>
-              {/* <input
-              type=""
-              placeholder="Samuel_Ezeh"
-              onChange={(e) =>
-                setTask({ ...task, Samuel_Ezeh: e.target.value })
-              }
-            /> */}
+
               <select
                 name=""
                 id=""
-                onChange={(e) =>
-                  setTask({ ...task, Samuel_Ezeh: e.target.value })
+                onChange={
+                  (e) => getUserId(e.target.value)
+                  // setPayload({ ...payload, assigned_user: e.target.value })
                 }
+                // value={payload.assigned_user}
               >
                 <option value="">Select a user</option>
                 {assignedUers &&
@@ -108,7 +113,7 @@ export default function Form() {
             <div className="btn">
               <div className="btn1">
                 <button
-                  onSubmit={handleSubmit}
+                  onClick={handleSubmit}
                   type="submit"
                   style={{ backgroundColor: "green" }}
                 >
@@ -116,7 +121,13 @@ export default function Form() {
                 </button>
               </div>
               <div className="btn2">
-                <button onClick={clear} style={{ backgroundColor: "red" }}>
+                <button
+                  onClick={() => {
+                    setAddTask(false);
+                    setTaskSummary(true);
+                  }}
+                  style={{ backgroundColor: "red" }}
+                >
                   cancel
                 </button>
               </div>

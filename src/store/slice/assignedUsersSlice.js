@@ -30,5 +30,4 @@ export const assignUserSlice = createSlice({
   },
 });
 
-// export const {} = authSlice.actions;
 export default assignUserSlice.reducer;
